@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pantry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- background image -->
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_background" />
+
+    <!-- Leftover image -->
+    <ImageView
+        android:id="@+id/topImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/leftover_image"
+        android:scaleType="centerCrop" />
+
+    <!-- TextView placed below the leftover image -->
+    <TextView
+        android:id="@+id/title_generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select your Leftovers:"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#00008B"
+        android:layout_marginTop="160dp"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- GridLayout for checkboxes -->
+    <GridLayout
+        android:id="@+id/checkbox_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/title_generate">
+
+        <CheckBox
+            android:id="@+id/lentils"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="24dp"
+            android:text="Lentils" />
+
+        <CheckBox
+            android:id="@+id/carrot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Carrot"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/mustard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mustard"
+            android:layout_columnWeight="1"
+            android:textColor="#00008B"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/lemon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Lemon"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/spinach"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Spinach"
+            android:layout_columnWeight="1"
+            android:textColor="#00008B"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/ginger"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ginger"
+            android:layout_columnWeight="1"
+            android:textColor="#00008B"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/cashew"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cashew"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/miso"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Miso paste"
+            android:layout_columnWeight="1"
+            android:textColor="#00008B"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/dough"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Phyllo dough"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/feta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Feta"
+            android:layout_columnWeight="1"
+            android:textColor="#00008B"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/jalapeno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Jalapeño"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/mango"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mango"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/beans"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#00008B"
+            android:text="Green beans"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/tofu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tofu"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/avocado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Avocado"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/radish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Radish"
+            android:layout_columnWeight="1"
+            android:textColor="#00008B"
+            android:layout_marginEnd="24dp" />
+
+        <CheckBox
+            android:id="@+id/parsley"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Parsley"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1" />
+
+        <CheckBox
+            android:id="@+id/chili"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Red chili"
+            android:textColor="#00008B"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="24dp" />
+    </GridLayout>
+
+    <Button
+        android:id="@+id/generate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate Recipe"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="80dp"
+        android:textColor="#00008B"
+        android:backgroundTint="#ffde21"/>
+
+    <TextView
+        android:id="@+id/inspiration_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click to get your recipe inspiration!"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:textColor="#00008B"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="700dp"
+        android:layout_alignTop="@id/generate_button"/>
+
+</FrameLayout>
