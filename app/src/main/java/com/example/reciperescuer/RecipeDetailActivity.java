@@ -140,14 +140,20 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         if (id== R.id.homeOption) {
             Intent intent = new Intent(this, HomeActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         } else if (id == R.id.profileOption) {
             Intent intent = new Intent(this, ProfileActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         } else if (id == R.id.pantryOption) {
             Intent intent = new Intent(this, PantryActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         }
@@ -178,7 +184,8 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         // Replace list markers "-" with bullet points "•"
         text = text.replaceAll("(?m)^-\\s", "• ");
-
+        // Remove the ** symbols after applying bold style
+        text = text.replaceAll("\\*\\*(.*?)\\*\\*", "$1");
         SpannableString spannable = new SpannableString(text);
 
         // Apply bold styling to text between **...**
@@ -194,8 +201,7 @@ public class RecipeDetailActivity extends AppCompatActivity {
             );
         }
 
-        // Remove the ** symbols after applying bold style
-        text = text.replaceAll("\\*\\*(.*?)\\*\\*", "$1");
+
 
         return spannable;
     }

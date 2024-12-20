@@ -24,12 +24,9 @@ public class Login2Activity extends AppCompatActivity {
             return insets;
         });
 
-        // Use NavController for fragment navigation instead of manually replacing fragments
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         NavController navController = navHostFragment.getNavController();
 
-        // Apply any NavOptions if needed, like custom animations
         NavOptions navOptions = new NavOptions.Builder().setEnterAnim(R.anim.slide).build();
-        // Now handle navigation using the NavController
     }
 }

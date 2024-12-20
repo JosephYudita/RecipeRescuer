@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Sign UP"
+        android:text="Welcome To Recipe Rescuer"
         android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#00008B"
@@ -104,9 +104,9 @@
 
     <TextView
         android:id="@+id/displayText"
-        android:layout_width="274dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="375dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="48dp"
         android:clickable="true"
         android:focusable="true"
         android:minWidth="48dp"
@@ -117,7 +117,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -126,12 +126,12 @@
         android:id="@+id/signUp_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="152dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#00008B"
         android:text="Sign Up"
-        android:textSize="15dp"
         android:textColor="#FFFFFF"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/background1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -139,12 +139,12 @@
 
     <Button
         android:id="@+id/login_button"
-        android:layout_width="296dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="136dp"
+        android:layout_width="86dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="92dp"
         android:background="@drawable/rounded_corner"
         android:backgroundTint="#00008B"
-        android:text="Already have an account!"
+        android:text="LogIn"
         android:textColor="#FFFFFF"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -166,6 +166,41 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text" />
+
+    <RadioGroup
+        android:id="@+id/skillLevelRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/displayText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/beginnerRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kitchen Newbie🍳"
+            android:textStyle="bold"
+            android:textSize="11sp"/>
+
+        <RadioButton
+            android:id="@+id/intermediateRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pan Wrangler🍲"
+            android:textStyle="bold"
+            android:textSize="11sp"/>
+
+        <RadioButton
+            android:id="@+id/chefRadioButton"
+            android:layout_width="202dp"
+            android:layout_height="wrap_content"
+            android:text="Master of Flames🔥"
+            android:textStyle="bold"
+            android:textSize="11sp" />
+    </RadioGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

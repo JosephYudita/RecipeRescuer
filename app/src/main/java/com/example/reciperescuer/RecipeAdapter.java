@@ -9,20 +9,21 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder> {
 
+    private String username;
     private List<Recipe> recipes;
     private Context context;
 
     // Constructor for the Adapter
-    public RecipeAdapter(Context context, List<Recipe> dataSet) {
+    public RecipeAdapter(Context context, List<Recipe> dataSet, String username) {
         this.context = context;
         this.recipes = dataSet;
+        this.username = username;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -31,7 +32,6 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
         public ViewHolder(View view) {
             super(view);
-            // Initialize the ImageView for each item in the RecyclerView
             imageView = view.findViewById(R.id.recyclerImageView);
             titleText = view.findViewById(R.id.recyclertitleText);
         }
@@ -40,26 +40,24 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             return imageView;
         }
 
-        public TextView getTitleText() {  // Added getter for TextView
+        public TextView getTitleText() {
             return titleText;
         }
     }
 
-    // Create new views (invoked by the layout manager)
+    // Create new views
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.home_image_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
-    // Bind data to the view (invoked by the layout manager)
+    // Bind data to the view
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Recipe recipe = recipes.get(position);
         viewHolder.imageView.setImageResource(recipe.getImageResId());
         viewHolder.titleText.setText(recipe.getTitle());
-
-        Log.d("Recipe Adapter", "Position: " + position + ", Recipe: " + recipe.getTitle());
 
         viewHolder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, RecipeDetailActivity.class);
@@ -70,6 +68,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             int textResId = getTextFileForRecipe(recipe.getTitle());
             intent.putExtra("textResId", textResId);
             intent.putExtra("RECIPE_TYPE", position );
+
+            intent.putExtra("username", username);
 
             context.startActivity(intent);
         });

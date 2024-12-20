@@ -28,19 +28,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Reference the ImageView for the logo
+        // for the logo
         ImageView imageView = findViewById(R.id.animatedImage);
 
-        // Handler to apply the initial delay and then start the animation
+        // apply delay and then start the animation
         new Handler().postDelayed(() -> {
-            // Load and start the upward animation
+            // start the animation
             Animation animation = AnimationUtils.loadAnimation(this, R.anim.move_up_and_fade);
 
-            // Set an AnimationListener to hide the ImageView once the animation finishes
+            //  hide the ImageView once the animation finishes
             animation.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation animation) {
-                    // You can do something when the animation starts (optional)
+                    // gave error without
                 }
 
                 @Override
@@ -53,18 +53,18 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, Login2Activity.class);
                         startActivity(intent);
                         finish();
-                    }, 200); // Slight delay to ensure the transition happens after the image is hidden
+                    }, 200); // Slight delay
                 }
 
                 @Override
                 public void onAnimationRepeat(Animation animation) {
-                    // You can do something if the animation repeats (optional)
+                    // gave error without
                 }
             });
 
             // Start the animation
             imageView.startAnimation(animation);
 
-        }, 2000); // Initial delay before starting the animation
+        }, 2000); // delay before starting the animation
     }
 }

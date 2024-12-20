@@ -145,6 +145,8 @@ public class PantryActivity extends AppCompatActivity {
 
             // Pass the recipe type since it's needed for the next activity
             intent.putExtra("RECIPE_TYPE", recipeType);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
         }
 
@@ -163,14 +165,20 @@ public class PantryActivity extends AppCompatActivity {
 
         if (id== R.id.homeOption) {
             Intent intent = new Intent(this, HomeActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         } else if (id == R.id.profileOption) {
+            String username = getIntent().getStringExtra("username");
             Intent intent = new Intent(this, ProfileActivity.class);
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         } else if (id == R.id.pantryOption) {
             Intent intent = new Intent(this, PantryActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         }

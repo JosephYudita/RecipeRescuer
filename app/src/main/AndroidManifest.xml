@@ -2,6 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,24 +20,28 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/rr_logo"
         android:supportsRtl="true"
-        android:theme="@style/App.Theme"
+        android:theme="@style/Theme.RecipeRescuer"
         tools:targetApi="31">
         <activity
             android:name=".ProfileActivity"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true"
+            android:theme="@style/App.Theme"/>
         <activity
             android:name=".Login2Activity"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true"
+            android:theme="@style/App.Theme"/>
         <activity
             android:name=".PantryActivity"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true"
+            android:theme="@style/App.Theme"/>
         <activity
             android:name=".LoginActivity"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/App.Theme" />
         <activity
             android:name=".MainActivity"
             android:enabled="true"
@@ -35,15 +49,18 @@
         <activity
             android:name=".Recipe2Activity"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/App.Theme"/>
         <activity
             android:name=".RecipeDetailActivity"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/App.Theme"/>
         <activity
             android:name=".HomeActivity"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/App.Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

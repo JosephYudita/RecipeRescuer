@@ -32,6 +32,8 @@ public class HomeActivity extends AppCompatActivity {
             return insets;
         });
 
+        String username = getIntent().getStringExtra("username");
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
         // Create a dataset of image resources
@@ -51,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         dataSet.add(new Recipe(R.drawable.poke, "Poke"));
 
         // Create an adapter and set it to the RecyclerView
-        RecipeAdapter customAdapter = new RecipeAdapter(this, dataSet);
+        RecipeAdapter customAdapter = new RecipeAdapter(this, dataSet, username);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(customAdapter);
     }
@@ -69,14 +71,20 @@ public class HomeActivity extends AppCompatActivity {
 
         if (id== R.id.homeOption) {
             Intent intent = new Intent(this, HomeActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         } else if (id == R.id.profileOption) {
             Intent intent = new Intent(this, ProfileActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         } else if (id == R.id.pantryOption) {
             Intent intent = new Intent(this, PantryActivity.class);
+            String username = getIntent().getStringExtra("username");
+            intent.putExtra("username", username);
             startActivity(intent);
             return true;
         }
